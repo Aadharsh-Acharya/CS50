@@ -32,23 +32,29 @@ int main(void){
     }
     else
     {
+        int length = 0;
         while(card >= 100)
         {
             card /= 10;
+            length++;
         }
         int first = card;
 
-        if (first == 34 || first == 37)
+        if ((first == 34 || first == 37) && (length == 13))
         {
             printf("AMEX\n");
         }
-        else if (first == 51 || first == 52 || first == 53 || first == 54 || first == 55)
+        else if ((first == 51 || first == 52 || first == 53 || first == 54 || first == 55) && (length == 14);
         {
             printf("MASTERCARD\n");
         }
-        else if (first % 40 < 10)
+        else if ((first % 40 < 10) && ((length == 11) || (length == 14))
         {
             printf("VISA\n");
+        }
+        else
+        {
+            printf("INVALID\n");
         }
     }
 }
